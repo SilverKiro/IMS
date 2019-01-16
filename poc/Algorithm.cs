@@ -10,8 +10,8 @@ namespace Algorithm
     {
         static void Main(string[] args)
         {
-            Item woodenSword = new NormalItem { Name = "Wooden Sword", Price = 100, Weight = 40 };
-            Item woodenHelmet = new NormalItem { Name = "Wooden Helmet", Price = 150, Weight = 50 };
+            Item woodenSword = new CommonItem { Name = "Wooden Sword", Price = 100, Weight = 40 };
+            Item woodenHelmet = new CommonItem { Name = "Wooden Helmet", Price = 150, Weight = 50 };
             Item witchEyes = new QuestItem { Name = "Witch Eyes", Price = 4, Weight = 60 };
             Inventory chest = new Inventory();
             chest.AddItem(new Money { Price = 300 });
@@ -20,11 +20,13 @@ namespace Algorithm
             chest.AddItem(woodenSword);
             chest.AddItem(witchEyes);
 
-
             Inventory inventory = new Inventory();
             inventory.AddItem(new Money { Price = 900 });
             inventory.RemoveItem(new Money { Price = 63 });
             inventory.AddItem(woodenHelmet);
+            inventory.AddItem(woodenHelmet);
+            inventory.AddItem(woodenHelmet);
+
 
 
             MaximizeTotalValue(chest, inventory);
@@ -48,7 +50,7 @@ namespace Algorithm
             }
 
             int capacity = inventory.Capacity - inventory.TotalWeight;
-            long[,] knapsack = new long[items.Length + 1, capacity + 1];
+            double[,] knapsack = new double[items.Length + 1, capacity + 1];
             int[,] keep = new int[items.Length + 1, capacity + 1];
             for (int itemIdx = 0; itemIdx <= items.Length; itemIdx++)
             {
@@ -62,11 +64,11 @@ namespace Algorithm
                     }
                     else if (currentItem.GetWeight() <= currentCapacity)
                     {
-                        long memoized = currentItem.GetValue() + knapsack[itemIdx - 1, currentCapacity - currentItem.GetWeight()];
+                        double memoizedValue = currentItem.GetValue() + knapsack[itemIdx - 1, currentCapacity - currentItem.GetWeight()];
                         knapsack[itemIdx, currentCapacity] = Math.Max(
-                            memoized,
+                            memoizedValue,
                             knapsack[itemIdx - 1, currentCapacity]);
-                        if (knapsack[itemIdx, currentCapacity] == memoized)
+                        if (knapsack[itemIdx, currentCapacity] == memoizedValue)
                         {
                             keep[itemIdx, currentCapacity] = 1;
                         }
@@ -186,9 +188,9 @@ namespace Algorithm
         public int Priority { get; set; }
         public String Name { get; set; }
 
-        public virtual int GetValue()
+        public virtual double GetValue()
         {
-            return this.Priority * ((CategoryMaxPrice() - CategoryMinPrice()) / (CategoryMaxPrice() - this.Price + 1));
+            return this.GetPriority() * ((CategoryMaxPrice() - CategoryMinPrice())*1.0 / (CategoryMaxPrice()*1.0 - this.GetPrice() + 1));
         }
 
         protected int GetPrice()
@@ -224,7 +226,7 @@ namespace Algorithm
 
         public override string ToString()
         {
-            return this.GetName() + "[Price=" + this.GetPrice() + ", Priority=" + this.GetPriority() + ", Weight=" + this.GetWeight() + "]";
+            return this.GetName() + "[Price=" + this.GetPrice() + ", Priority=" + this.GetPriority() + ", Weight=" + this.GetWeight() + ", Value=" + this.GetValue() + "]";
         }
 
     }
@@ -245,9 +247,9 @@ namespace Algorithm
 
     class QuestItem : Item
     {
-        public override int GetValue()
+        public override double GetValue()
         {
-            return this.GetPriority();
+            return this.GetPriority() * 1.0;
         }
 
         public override int GetPriority()
@@ -266,13 +268,8 @@ namespace Algorithm
         }
     }
 
-    class NormalItem : Item
+    class CommonItem : Item
     {
-        public override int GetValue()
-        {
-            return this.Price;
-        }
-
         public override int GetPriority()
         {
             return 9;
@@ -286,6 +283,42 @@ namespace Algorithm
         public override int CategoryMaxPrice()
         {
             return 250;
+        }
+    }
+
+    class ExoticItem : Item
+    {
+        public override int GetPriority()
+        {
+            return 2211;
+        }
+
+        public override int CategoryMinPrice()
+        {
+            return 150;
+        }
+
+        public override int CategoryMaxPrice()
+        {
+            return 600;
+        }
+    }
+
+    class LegendaryItem : Item
+    {
+        public override int GetPriority()
+        {
+            return 995780;
+        }
+
+        public override int CategoryMinPrice()
+        {
+            return 300;
+        }
+
+        public override int CategoryMaxPrice()
+        {
+            return 1500;
         }
     }
 }
