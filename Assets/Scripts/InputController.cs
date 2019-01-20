@@ -1,15 +1,9 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
     [SerializeField] private float _walkingSpeed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     private void Update()
     {
@@ -30,10 +24,12 @@ public class InputController : MonoBehaviour
         }
     }
 
+
     private static float SignedSquare( float value )
     {
         return value >= 0 ? Mathf.Pow( value, 8 ) : -Mathf.Pow( value, 8 );
     }
+
 
     private static float GetAxisMovement( string axis )
     {
