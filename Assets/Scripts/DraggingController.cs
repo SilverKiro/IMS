@@ -14,6 +14,8 @@ public class DraggingController : MonoBehaviour, IDragHandler, IBeginDragHandler
 
     public void OnBeginDrag( PointerEventData eventData )
     {
+        if ( !_draggableItem ) return;
+        
         _draggableItem.transform.SetParent( GameObject.Find( "DraggableItemHolder" ).transform );
     }
 
