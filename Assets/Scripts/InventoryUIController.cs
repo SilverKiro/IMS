@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class InventoryController : MonoBehaviour
+public class InventoryUIController : MonoBehaviour
 {
     [SerializeField] private GameObject _imsCanvasObj;
     [SerializeField] private GameObject _chestCanvasObj;

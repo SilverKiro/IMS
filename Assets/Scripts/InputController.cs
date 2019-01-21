@@ -20,7 +20,7 @@ public class InputController : MonoBehaviour
 
         if ( Input.GetButtonUp( "Inventory" ) )
         {
-            GetComponent<InventoryController>().ShowCanvas();
+            GetComponent<InventoryUIController>().ShowCanvas();
         }
     }
 

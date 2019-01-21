@@ -92,7 +92,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1156564442368487413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77ce96584ca46704aa1fdce786ad8035, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d59a69b29704534d844419029fa4138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _imsCanvasObj: {fileID: 0}
