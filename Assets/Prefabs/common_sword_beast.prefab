@@ -72,9 +72,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _category: 2
-  price: 100
-  weight: 70
-  name: The Beast
+  _price: 100
+  _weight: 70
+  _name: The Beast
 --- !u!1 &4602712015916588325
 GameObject:
   m_ObjectHideFlags: 0

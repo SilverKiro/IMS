@@ -146,6 +146,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _category: 3
-  price: 300
-  weight: 70
-  name: The Hellway
+  _price: 300
+  _weight: 70
+  _name: The Hellway

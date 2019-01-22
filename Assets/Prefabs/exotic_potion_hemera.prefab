@@ -146,6 +146,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _category: 3
-  price: 350
-  weight: 20
-  name: Hemera's Potion
+  _price: 350
+  _weight: 20
+  _name: Hemera's Potion

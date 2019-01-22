@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Items;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] private int _totalItems;
     [SerializeField] private int _capacity;
 
+    public Text WeightPreview;
     public GameObject[] Parents;
     public GameObject[] Children;
 
@@ -19,15 +21,19 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        var stuff = FindObjectsOfType<ItemDB>();
-        foreach ( var itemDb in stuff )
+        foreach ( var child in Children )
         {
+            if ( !child ) continue;
+            var itemDb = child.GetComponent<ItemDB>();
+            Debug.Log( child.name );
             Items.Add( itemDb.Item );
             _totalItems += 1;
-            _totalWeight += itemDb.Item.GetWeight();
+            AddTotalWeight( itemDb.Item.GetWeight() );
+//            _totalWeight += itemDb.Item.GetWeight();
         }
+        SetTotalWeightText();
     }
-    
+
     // freeSpot
     // addToSpot
     // removeFromSpot
@@ -73,7 +79,8 @@ public class Inventory : MonoBehaviour
             _totalItems += 1;
         }
         */
-        _totalWeight += item.GetWeight();
+        AddTotalWeight( item.GetWeight() );
+        //_totalWeight += item.GetWeight();
     }
 
 
@@ -94,7 +101,8 @@ public class Inventory : MonoBehaviour
             _items.Remove( item );
         }
         */
-        _totalWeight -= item.GetWeight();
+        ReduceTotalWeight( item.GetWeight() );
+        //_totalWeight -= item.GetWeight();
     }
 
     /*
@@ -109,4 +117,26 @@ public class Inventory : MonoBehaviour
         return toReturn + "]";
     }
     */
+
+    private void ReduceTotalWeight( int value )
+    {
+//        Debug.Log("Reduce: " + value);
+        AddTotalWeight( -value );
+    }
+
+    private void AddTotalWeight( int value )
+    {
+//        Debug.Log("TotalWeightChange: " + value);
+        _totalWeight += value;
+        SetTotalWeightText();
+    }
+
+    private void SetTotalWeightText()
+    {
+        if ( WeightPreview )
+        {
+            WeightPreview.text = _totalWeight + "/" + _capacity;
+            //WeightPreview.GetComponent<Text>().text = _totalWeight + "/" + _capacity;
+        }
+    }
 }

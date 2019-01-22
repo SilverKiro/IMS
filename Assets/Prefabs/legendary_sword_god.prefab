@@ -72,9 +72,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _category: 4
-  price: 1300
-  weight: 200
-  name: The God
+  _price: 1300
+  _weight: 200
+  _name: The God
 --- !u!1 &4812470403437493020
 GameObject:
   m_ObjectHideFlags: 0

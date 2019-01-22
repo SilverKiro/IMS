@@ -3744,6 +3744,7 @@ MonoBehaviour:
   _totalWeight: 0
   _totalItems: 0
   _capacity: 450
+  WeightPreview: {fileID: 693313068839169393}
   Parents:
   - {fileID: 2129011417149788927}
   - {fileID: 2129011418635342784}
@@ -6216,6 +6217,7 @@ MonoBehaviour:
   _totalWeight: 0
   _totalItems: 0
   _capacity: 999999
+  WeightPreview: {fileID: 0}
   Parents:
   - {fileID: 2129011418453773134}
   - {fileID: 2129011416794596462}

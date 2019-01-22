@@ -101,6 +101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _category: 1
-  price: 9999
-  weight: 150
-  name: Big Boy
+  _price: 9999
+  _weight: 150
+  _name: Big Boy
