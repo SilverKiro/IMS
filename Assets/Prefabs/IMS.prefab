@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 2129011416794596459}
   - component: {fileID: 2129011416794596456}
   m_Layer: 5
-  m_Name: InventorySlot (1)
+  m_Name: ChestorySlot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -631,7 +631,7 @@ GameObject:
   - component: {fileID: 2129011416926654002}
   - component: {fileID: 2129011416926654007}
   m_Layer: 5
-  m_Name: InventorySlot (7)
+  m_Name: ChestorySlot (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1398,7 +1398,7 @@ GameObject:
   - component: {fileID: 2129011417173637723}
   - component: {fileID: 2129011417173637720}
   m_Layer: 5
-  m_Name: InventorySlot (12)
+  m_Name: ChestorySlot (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2339,7 +2339,7 @@ GameObject:
   - component: {fileID: 2129011417514122315}
   - component: {fileID: 2129011417514122312}
   m_Layer: 5
-  m_Name: InventorySlot (8)
+  m_Name: ChestorySlot (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3014,7 +3014,7 @@ GameObject:
   - component: {fileID: 2129011417717345330}
   - component: {fileID: 2129011417717345335}
   m_Layer: 5
-  m_Name: InventorySlot (2)
+  m_Name: ChestorySlot (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3116,7 +3116,7 @@ GameObject:
   - component: {fileID: 2129011417718500536}
   - component: {fileID: 2129011417718500541}
   m_Layer: 5
-  m_Name: InventorySlot (6)
+  m_Name: ChestorySlot (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3218,7 +3218,7 @@ GameObject:
   - component: {fileID: 2129011417729067549}
   - component: {fileID: 2129011417729067538}
   m_Layer: 5
-  m_Name: InventorySlot (11)
+  m_Name: ChestorySlot (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3320,7 +3320,7 @@ GameObject:
   - component: {fileID: 2129011417737905616}
   - component: {fileID: 2129011417737905621}
   m_Layer: 5
-  m_Name: InventorySlot (13)
+  m_Name: ChestorySlot (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3509,7 +3509,7 @@ GameObject:
   - component: {fileID: 2129011417761209611}
   - component: {fileID: 2129011417761209608}
   m_Layer: 5
-  m_Name: InventorySlot (4)
+  m_Name: ChestorySlot (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3744,6 +3744,40 @@ MonoBehaviour:
   _totalWeight: 0
   _totalItems: 0
   _capacity: 450
+  Parents:
+  - {fileID: 2129011417149788927}
+  - {fileID: 2129011418635342784}
+  - {fileID: 2129011417702309847}
+  - {fileID: 2129011416820644891}
+  - {fileID: 2129011417741917011}
+  - {fileID: 2129011418851129530}
+  - {fileID: 2129011418078026288}
+  - {fileID: 2129011417473202731}
+  - {fileID: 2129011417204092078}
+  - {fileID: 2129011416930830853}
+  - {fileID: 2129011418156908148}
+  - {fileID: 2129011417270258853}
+  - {fileID: 2129011418145762183}
+  - {fileID: 2129011418050118007}
+  - {fileID: 2129011417289477244}
+  - {fileID: 2129011418215092155}
+  Children:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2129011417792998070
 GameObject:
   m_ObjectHideFlags: 0
@@ -3758,7 +3792,7 @@ GameObject:
   - component: {fileID: 2129011417792998067}
   - component: {fileID: 2129011417792998064}
   m_Layer: 5
-  m_Name: InventorySlot (10)
+  m_Name: ChestorySlot (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4531,7 +4565,7 @@ GameObject:
   - component: {fileID: 2129011418124559430}
   - component: {fileID: 2129011418124559483}
   m_Layer: 5
-  m_Name: InventorySlot (9)
+  m_Name: ChestorySlot (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4983,7 +5017,7 @@ GameObject:
   - component: {fileID: 2129011418251752532}
   - component: {fileID: 2129011418251752521}
   m_Layer: 5
-  m_Name: InventorySlot (3)
+  m_Name: ChestorySlot (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5499,7 +5533,7 @@ GameObject:
   - component: {fileID: 2129011418453773130}
   - component: {fileID: 2129011418453773128}
   m_Layer: 5
-  m_Name: InventorySlot
+  m_Name: ChestorySlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5845,7 +5879,7 @@ GameObject:
   - component: {fileID: 2129011418506835933}
   - component: {fileID: 2129011418506835922}
   m_Layer: 5
-  m_Name: InventorySlot (15)
+  m_Name: ChestorySlot (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6182,6 +6216,40 @@ MonoBehaviour:
   _totalWeight: 0
   _totalItems: 0
   _capacity: 999999
+  Parents:
+  - {fileID: 2129011418453773134}
+  - {fileID: 2129011416794596462}
+  - {fileID: 2129011417717345333}
+  - {fileID: 2129011418251752527}
+  - {fileID: 2129011417761209614}
+  - {fileID: 2129011418773585368}
+  - {fileID: 2129011417718500531}
+  - {fileID: 2129011416926654005}
+  - {fileID: 2129011417514122318}
+  - {fileID: 2129011418124559481}
+  - {fileID: 2129011417792998070}
+  - {fileID: 2129011417729067536}
+  - {fileID: 2129011417173637726}
+  - {fileID: 2129011417737905611}
+  - {fileID: 2129011418838103974}
+  - {fileID: 2129011418506835920}
+  Children:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2129011418623839915
 GameObject:
   m_ObjectHideFlags: 0
@@ -6749,7 +6817,7 @@ GameObject:
   - component: {fileID: 2129011418773585317}
   - component: {fileID: 2129011418773585370}
   m_Layer: 5
-  m_Name: InventorySlot (5)
+  m_Name: ChestorySlot (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6851,7 +6919,7 @@ GameObject:
   - component: {fileID: 2129011418838103971}
   - component: {fileID: 2129011418838103968}
   m_Layer: 5
-  m_Name: InventorySlot (14)
+  m_Name: ChestorySlot (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
