@@ -11,25 +11,29 @@ public class ItemDB : MonoBehaviour
 
     public Item Item;
 
+    public int Price { get => _price; set => _price = value; }
+    public Category Category1 { get => _category; set => _category = value; }
+    public int Weight { get => _weight; set => _weight = value; }
+    public string Name { get => _name; set => _name = value; }
 
     private void Awake()
     {
-        switch ( _category )
+        switch ( Category1 )
         {
             case Category.MONEY:
-                Item = new Money { Name = _name };
+                Item = new Money { Name = Name };
                 break;
             case Category.COMMON:
-                Item = new CommonItem { Name = _name, Price = _price, Weight = _weight };
+                Item = new CommonItem { Name = Name, Price = Price, Weight = Weight };
                 break;
             case Category.EXOTIC:
-                Item = new ExoticItem { Name = _name, Price = _price, Weight = _weight };
+                Item = new ExoticItem { Name = Name, Price = Price, Weight = Weight };
                 break;
             case Category.LEGENDARY:
-                Item = new LegendaryItem { Name = _name, Price = _price, Weight = _weight };
+                Item = new LegendaryItem { Name = Name, Price = Price, Weight = Weight };
                 break;
             case Category.QUEST_ITEM:
-                Item = new QuestItem { Name = _name, Price = _price, Weight = _weight };
+                Item = new QuestItem { Name = Name, Price = Price, Weight = Weight };
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -37,7 +41,7 @@ public class ItemDB : MonoBehaviour
     }
 
 
-    private enum Category
+    public enum Category
     {
         MONEY,
         QUEST_ITEM,
