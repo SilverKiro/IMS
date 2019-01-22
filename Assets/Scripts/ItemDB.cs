@@ -9,7 +9,9 @@ public class ItemDB : MonoBehaviour
     [SerializeField] private int _weight;
     [SerializeField] private string _name;
 
-    public Item Item;
+    public Inventory Inventory { get; set; }
+    public Item Item { get; set; }
+    public int Loc { get; set; }
 
 
     private void Awake()
@@ -34,6 +36,8 @@ public class ItemDB : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
+
+        Item.Parent = gameObject;
     }
 
 

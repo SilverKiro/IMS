@@ -21,16 +21,25 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        foreach ( var child in Children )
+        for ( var index = 0; index < Children.Length; index++ )
         {
+            var parent = Parents[index];
+            var draggableItem = parent.GetComponent<DraggingController>();
+            draggableItem.Inventory = this;
+            draggableItem.Location = index;
+            
+            var child = Children[index];
             if ( !child ) continue;
             var itemDb = child.GetComponent<ItemDB>();
             Debug.Log( child.name );
+            itemDb.Loc = index;
+            itemDb.Inventory = this;
             Items.Add( itemDb.Item );
             _totalItems += 1;
             AddTotalWeight( itemDb.Item.GetWeight() );
 //            _totalWeight += itemDb.Item.GetWeight();
         }
+
         SetTotalWeightText();
     }
 

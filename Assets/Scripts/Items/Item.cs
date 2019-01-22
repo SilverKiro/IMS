@@ -1,4 +1,6 @@
-﻿namespace Items
+﻿using UnityEngine;
+
+namespace Items
 {
     public abstract class Item
     {
@@ -6,6 +8,7 @@
         public int Price { get; set; }
         public int Priority { get; set; }
         public string Name { get; set; }
+        public GameObject Parent { get; set; }
 
         public virtual double GetValue()
         {
