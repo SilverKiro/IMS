@@ -66,7 +66,20 @@ public class Inventory : MonoBehaviour
     }
 
 
+    public int FreeSpot()
+    {
+        for ( var index = 0; index < Children.Length; index++ )
+            if ( Children[index] == null )
+                return index;
+        throw new IndexOutOfRangeException();
+    }
+
     public void AddItem( Item item )
+    {
+        AddItem( item, true );
+    }
+    
+    public void AddItem( Item item, bool noSpot )
     {
         //int defVal;
         if ( item.GetWeight() + _totalWeight > _capacity )
@@ -74,6 +87,18 @@ public class Inventory : MonoBehaviour
             throw new Exception( "Inventory is full!" );
         }
 
+        if ( noSpot )
+        {
+            var a = FreeSpot();
+            var draggableItem = item.Parent.GetComponent<DraggableItem>();
+            
+            draggableItem.transform.SetParent( Parents[a].transform );
+            draggableItem.transform.position = Parents[a].transform.position;
+            Children[a] = draggableItem.gameObject;
+            Parents[a].GetComponent<DraggingController>()._draggableItem = draggableItem;
+            item.Parent.GetComponent<ItemDB>().Loc = a;
+        }
+        
         Items.Add( item );
         /*
         if ( _items.TryGetValue( item, out defVal ) )
@@ -92,10 +117,26 @@ public class Inventory : MonoBehaviour
         //_totalWeight += item.GetWeight();
     }
 
-
     public void RemoveItem( Item item )
     {
+        RemoveItem( item, true, 0 );
+    }
+
+    public void RemoveItem( Item item, bool noSpot, int loc )
+    {
         //int defVal;
+        
+        if ( noSpot )
+        {
+            var i = item.Parent.GetComponent<ItemDB>();
+            Children[i.Loc] = null;
+            Parents[i.Loc].GetComponent<DraggingController>()._draggableItem = null;
+        }
+        else
+        {
+            Children[loc] = null;
+            Parents[loc].GetComponent<DraggingController>()._draggableItem = null;
+        }
 
         Items.Remove( item );
         /*

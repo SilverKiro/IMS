@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class DraggingController : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IDropHandler
 {
-    private DraggableItem _draggableItem;
+    public DraggableItem _draggableItem { get; set; }
 
     public Inventory Inventory { get; set; }
     public int Location { get; set; }
@@ -88,21 +88,23 @@ public class DraggingController : MonoBehaviour, IDragHandler, IBeginDragHandler
         item._draggableItem = _draggableItem;
         _draggableItem = temp;
 
-        if ( _draggableItem != null ) item.Inventory.RemoveItem( _draggableItem.GetComponent<ItemDB>().Item );
-        if ( item._draggableItem != null ) Inventory.RemoveItem( item._draggableItem.GetComponent<ItemDB>().Item );
+        if ( _draggableItem != null ) item.Inventory.RemoveItem( _draggableItem.GetComponent<ItemDB>().Item, false, Location );
+        if ( item._draggableItem != null ) Inventory.RemoveItem( item._draggableItem.GetComponent<ItemDB>().Item, false, item.Location );
         
         if ( _draggableItem != null )
         {
             _draggableItem.transform.SetParent( transform );
             _draggableItem.transform.position = transform.position;
-            Inventory.AddItem( _draggableItem.GetComponent<ItemDB>().Item );
+            Inventory.AddItem( _draggableItem.GetComponent<ItemDB>().Item, false );
+            _draggableItem.GetComponent<ItemDB>().Loc = Location;
         }
 
         if ( item._draggableItem != null )
         {
             item._draggableItem.transform.SetParent( item.transform );
             item._draggableItem.transform.position = item.transform.position;
-            item.Inventory.AddItem( item._draggableItem.GetComponent<ItemDB>().Item );
+            item.Inventory.AddItem( item._draggableItem.GetComponent<ItemDB>().Item, false );
+            item._draggableItem.GetComponent<ItemDB>().Loc = item.Location;
         }
     }
 

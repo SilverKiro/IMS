@@ -67,8 +67,8 @@ public class InventoryManager : MonoBehaviour
             if ( keep[itemIdx, capacity] == 1 )
             {
                 var item = items[itemIdx - 1];
-                _inventory.AddItem( item );
                 _chest.RemoveItem( item );
+                _inventory.AddItem( item );
                 capacity -= item.Weight;
             }
 
