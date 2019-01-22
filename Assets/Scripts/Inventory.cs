@@ -9,11 +9,29 @@ public class Inventory : MonoBehaviour
     [SerializeField] private int _totalItems;
     [SerializeField] private int _capacity;
 
+    public GameObject[] Parents;
+    public GameObject[] Children;
+
     // private Dictionary<Item, int> _items;
 
     //public Dictionary<Item, int> Items => _items;
     public List<Item> Items { get; } = new List<Item>();
 
+    private void Start()
+    {
+        var stuff = FindObjectsOfType<ItemDB>();
+        foreach ( var itemDb in stuff )
+        {
+            Items.Add( itemDb.Item );
+            _totalItems += 1;
+            _totalWeight += itemDb.Item.GetWeight();
+        }
+    }
+    
+    // freeSpot
+    // addToSpot
+    // removeFromSpot
+    
     public int TotalWeight
     {
         get { return _totalWeight; }
