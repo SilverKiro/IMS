@@ -9,7 +9,9 @@ public class ItemDB : MonoBehaviour
     [SerializeField] private int _weight;
     [SerializeField] private string _name;
 
-    public Item Item;
+    public Inventory Inventory { get; set; }
+    public Item Item { get; set; }
+    public int Loc { get; set; }
 
     public int Price { get => _price; set => _price = value; }
     public Category Category1 { get => _category; set => _category = value; }
@@ -38,6 +40,8 @@ public class ItemDB : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
+
+        Item.Parent = gameObject;
     }
 
 
