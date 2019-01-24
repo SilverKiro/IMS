@@ -104,7 +104,7 @@ MonoBehaviour:
   _category: 2
   _price: 10
   _weight: 10
-  _name: 
+  _name: Apple
 --- !u!114 &8306968787889497819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,3 +117,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e31fff8998fcc19419a6f02618dbe459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ast: {fileID: 4445726739692283334}
+  label: {fileID: 0}

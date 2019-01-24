@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2177245544782367062}
   - component: {fileID: 3398851553087085936}
   - component: {fileID: 6073617823785871629}
+  - component: {fileID: 1249780188070887765}
   m_Layer: 0
   m_Name: common_sword_beast
   m_TagString: Untagged
@@ -75,6 +76,20 @@ MonoBehaviour:
   _price: 100
   _weight: 70
   _name: Beast
+--- !u!114 &1249780188070887765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889419294291007936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31fff8998fcc19419a6f02618dbe459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ast: {fileID: 1889419294291007936}
+  label: {fileID: 0}
 --- !u!1 &4602712015916588325
 GameObject:
   m_ObjectHideFlags: 0

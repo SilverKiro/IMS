@@ -10,8 +10,8 @@ public class InventoryManager : MonoBehaviour
 
     public void MaximizeTotalValueFromChest()
     {
-        var items = _chest.Items.ToArray();
-        /*
+        var items = _chest.items().ToArray();
+        /*  
         var items = new Item[_chest.TotalItems];
         var globCounter = 0;
         foreach ( var kvp in _chest.Items )

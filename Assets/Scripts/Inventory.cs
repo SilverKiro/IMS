@@ -17,7 +17,22 @@ public class Inventory : MonoBehaviour
     // private Dictionary<Item, int> _items;
 
     //public Dictionary<Item, int> Items => _items;
-    public List<Item> Items { get; } = new List<Item>();
+
+    public List<Item> items()
+    {
+        var a = new List<Item>();
+        
+        for ( var index = 0; index < Children.Length; index++ )
+        {
+            var child = Children[index];
+            if ( !child ) continue;
+            var itemDb = child.GetComponent<ItemDB>();
+            itemDb.Loc = index;
+            a.Add( itemDb.Item );
+        }
+
+        return a;
+    }
 
     private void Start()
     {
@@ -34,7 +49,7 @@ public class Inventory : MonoBehaviour
             Debug.Log( child.name );
             itemDb.Loc = index;
             itemDb.Inventory = this;
-            Items.Add( itemDb.Item );
+            //Items.Add( itemDb.Item );
             _totalItems += 1;
             AddTotalWeight( itemDb.Item.GetWeight() );
 //            _totalWeight += itemDb.Item.GetWeight();
@@ -99,7 +114,7 @@ public class Inventory : MonoBehaviour
             item.Parent.GetComponent<ItemDB>().Loc = a;
         }
         
-        Items.Add( item );
+//        Items.Add( item );
         /*
         if ( _items.TryGetValue( item, out defVal ) )
         {
@@ -138,7 +153,7 @@ public class Inventory : MonoBehaviour
             Parents[loc].GetComponent<DraggingController>()._draggableItem = null;
         }
 
-        Items.Remove( item );
+  //      Items.Remove( item );
         /*
         if ( _items.TryGetValue( item, out defVal ) && defVal.CompareTo( 1 ) >= 0 )
         {

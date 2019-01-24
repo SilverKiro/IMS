@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 6914845753120749567}
   - component: {fileID: 6914845753120749566}
   - component: {fileID: 6914845753120749565}
+  - component: {fileID: 6020611846961039192}
   m_Layer: 0
   m_Name: exotic_sword_hellway
   m_TagString: Untagged
@@ -149,3 +150,17 @@ MonoBehaviour:
   _price: 300
   _weight: 70
   _name: Hellway
+--- !u!114 &6020611846961039192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6914845753120749564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31fff8998fcc19419a6f02618dbe459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ast: {fileID: 6914845753120749564}
+  label: {fileID: 0}

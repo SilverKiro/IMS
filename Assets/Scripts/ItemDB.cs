@@ -4,6 +4,30 @@ using UnityEngine;
 
 public class ItemDB : MonoBehaviour
 {
+    public Category Category1
+    {
+        get { return _category; }
+        set { _category = value; }
+    }
+
+    public int Price
+    {
+        get { return _price; }
+        set { _price = value; }
+    }
+
+    public int Weight
+    {
+        get { return _weight; }
+        set { _weight = value; }
+    }
+
+    public string Name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+
     [SerializeField] private Category _category;
     [SerializeField] private int _price;
     [SerializeField] private int _weight;
@@ -13,10 +37,7 @@ public class ItemDB : MonoBehaviour
     public Item Item { get; set; }
     public int Loc { get; set; }
 
-    public int Price { get => _price; set => _price = value; }
-    public Category Category1 { get => _category; set => _category = value; }
-    public int Weight { get => _weight; set => _weight = value; }
-    public string Name { get => _name; set => _name = value; }
+
 
     private void Awake()
     {

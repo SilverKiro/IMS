@@ -17,6 +17,7 @@ public class DraggingController : MonoBehaviour, IDragHandler, IBeginDragHandler
     private void Start()
     {
         _draggableItem = gameObject.GetComponentInChildren<DraggableItem>();
+//        print(_draggableItem.name);
     }
 
 
@@ -88,8 +89,8 @@ public class DraggingController : MonoBehaviour, IDragHandler, IBeginDragHandler
         item._draggableItem = _draggableItem;
         _draggableItem = temp;
 
-        if ( _draggableItem != null ) item.Inventory.RemoveItem( _draggableItem.GetComponent<ItemDB>().Item, false, Location );
-        if ( item._draggableItem != null ) Inventory.RemoveItem( item._draggableItem.GetComponent<ItemDB>().Item, false, item.Location );
+        if ( _draggableItem != null ) item.Inventory.RemoveItem( _draggableItem.GetComponent<ItemDB>().Item, false, item.Location );
+        if ( item._draggableItem != null ) Inventory.RemoveItem( item._draggableItem.GetComponent<ItemDB>().Item, false, Location );
         
         if ( _draggableItem != null )
         {

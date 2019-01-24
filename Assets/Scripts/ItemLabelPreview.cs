@@ -15,6 +15,7 @@ public class ItemLabelPreview : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("wut");
         singleton = ast;
         singleton.SetActive(false);
     }
